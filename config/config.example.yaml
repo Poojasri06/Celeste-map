@@ -1,0 +1,75 @@
+# Celeste Map Configuration File
+# Copy this file to config.yaml and add your API keys
+
+# API Configuration (Optional - the app works without these)
+api:
+  # IPinfo API - Free tier available at https://ipinfo.io/
+  ipinfo_token: "your_token_here_optional"
+  
+  # Rate limiting
+  rate_limit:
+    requests_per_minute: 50
+    requests_per_day: 1000
+
+# Risk Assessment Rules
+risk_engine:
+  # Port-based risk scoring
+  high_risk_ports: [22, 23, 3389, 4444, 5555, 8080, 8888]
+  medium_risk_ports: [80, 443, 8000, 8443]
+  
+  # Country-based risk multipliers (for educational demonstration only)
+  # Note: This is for demonstration purposes and should not be used to discriminate
+  high_risk_countries: []  # Intentionally empty - avoid country-based discrimination
+  
+  # ASN patterns (known VPN providers, datacenter ASNs)
+  datacenter_asn_keywords: ["hosting", "datacenter", "cloud", "virtual", "vpn", "proxy"]
+  
+  # Risk thresholds
+  thresholds:
+    high: 7.0
+    medium: 4.0
+    low: 0.0
+
+# Visualization Settings
+visualization:
+  map:
+    default_zoom: 2
+    default_center: [20, 0]  # Latitude, Longitude
+    cluster_radius: 50
+    max_cluster_radius: 80
+  
+  colors:
+    high_risk: "#FF4444"
+    medium_risk: "#FFA500"
+    low_risk: "#44FF44"
+    unknown: "#CCCCCC"
+
+# Data Processing
+data:
+  max_records: 10000  # Maximum records to process at once
+  cache_timeout: 3600  # Cache timeout in seconds
+  
+  # Expected CSV columns
+  required_columns:
+    - ip
+  
+  optional_columns:
+    - port
+    - country
+    - asn
+    - isp
+    - first_seen
+    - last_seen
+
+# Application Settings
+app:
+  title: "Celeste Map - Dark Web Awareness & VPN Tracking"
+  page_icon: "🗺️"
+  layout: "wide"
+  initial_sidebar_state: "expanded"
+  
+  # Privacy notice
+  show_privacy_banner: true
+  privacy_text: |
+    This is an educational tool. No user data is collected or stored.
+    All analysis is performed on publicly available datasets only.

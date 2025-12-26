@@ -1,0 +1,29 @@
+# Core Framework
+streamlit==1.29.0
+
+# Data Processing
+pandas==2.1.4
+numpy==1.26.2
+
+# Visualization
+plotly==5.18.0
+folium==0.15.1
+streamlit-folium==0.15.1
+
+# HTTP Requests & APIs
+requests==2.31.0
+
+# Geolocation & IP Analysis
+geoip2==4.7.0
+ipaddress==1.0.23
+
+# Configuration
+pyyaml==6.0.1
+
+# Utilities
+python-dateutil==2.8.2
+pytz==2023.3
+
+# Optional: Enhanced UI
+streamlit-aggrid==0.3.4.post3
+streamlit-option-menu==0.3.6
