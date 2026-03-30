@@ -1,6 +1,7 @@
 # Core Framework
 streamlit==1.29.0
-
+streamlit-folium
+folium
 # Data Processing
 pandas==2.1.4
 numpy==1.26.2
